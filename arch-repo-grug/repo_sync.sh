@@ -4,10 +4,12 @@ source /etc/profile
 set -euo pipefail
 
 if [ ! -f "/var/arch-repo-grug/public/aur/aur.db.tar.gz" ]; then
+    mkdir -p /var/arch-repo-grug/public/aur
     sudo --user build repo-add /var/arch-repo-grug/public/aur/aur.db.tar.gz
 fi
 
 if [ ! -f "/var/arch-repo-grug/public/grug/grug.db.tar.gz" ]; then
+    mkdir -p /var/arch-repo-grug/public/grug
     sudo --user build repo-add /var/arch-repo-grug/public/grug/grug.db.tar.gz
 fi
 

@@ -1,4 +1,5 @@
 pkgname=arch-repo-grug
+pkgver=0.0.1
 pkgver() {
   # Use number of revisions and hash as version
   cd "$pkgname"
