@@ -10,12 +10,14 @@ arch=('any')
 pkgdesc="arch repo for grug"
 url="https://git.grug.se/admin/arch-repo-grug"
 license=('MIT')
-depends=('rsync' 'curl' 'pacman-contrib')
 makedepends=()
 provides=()
 conflicts=()
 install="script.install"
 package() {
+  depends+=(rsync)
+  depends+=(curl)
+  depends+=(pacman-contrib)
   mkdir -p "$pkgdir/etc/systemd/system/"
   cp arch-repo-grug.timer "$pkgdir/etc/systemd/system/"
   cp arch-repo-grug.service "$pkgdir/etc/systemd/system/"
