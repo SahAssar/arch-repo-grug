@@ -1,0 +1,10 @@
+[Unit]
+Description=Arch/AUR build/sync service
+
+[Service]
+Type=oneshot
+ExecStart=-/repo_sync.sh
+ExecStartPost=/bin/poweroff
+
+[Install]
+WantedBy=multi-user.target

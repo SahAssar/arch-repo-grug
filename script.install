@@ -1,0 +1,4 @@
+#!/bin/bash -e
+post_install() {
+	systemctl enable --now arch-repo-grug.timer
+}

@@ -1,0 +1,9 @@
+[Unit]
+Description=arch-repo-grug update timer
+
+[Timer]
+OnCalendar=hourly
+Persistent=true
+
+[Install]
+WantedBy=timers.target

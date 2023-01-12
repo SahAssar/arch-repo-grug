@@ -1,0 +1,9 @@
+[Unit]
+Description=arch-repo-grug update
+
+[Service]
+Type=oneshot
+ExecStart=/etc/arch-repo-grug/update.sh
+
+[Install]
+WantedBy=multi-user.target
