@@ -68,6 +68,7 @@ fi
     sudo --user build mkdir -p /home/build/gitrepos
     cd /home/build/gitrepos
     for gitrepo in $GIT_REPOS; do
+        cd /home/build/gitrepos/
         gitreponame=$(basename -s .git "$gitrepo")
         if [ -d "$gitreponame" ]; then
             cd /home/build/gitrepos/$gitreponame
