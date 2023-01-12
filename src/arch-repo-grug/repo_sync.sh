@@ -75,14 +75,14 @@ fi
             sudo --user build git fetch
             if [ $(sudo --user build git rev-list HEAD...origin/$(sudo --user build git rev-parse --abbrev-ref HEAD) --count) -ne '0' ]; then
                 sudo --user build makepkg -crs --rmdeps --noconfirm
-                sudo --user build repo-add /var/arch-repo-grug/public/grug/grug.db.tar.gz *.pkg.tar.*
+                sudo --user build repo-add -R /var/arch-repo-grug/public/grug/grug.db.tar.gz *.pkg.tar.*
                 mv *.pkg.tar.* /var/arch-repo-grug/public/grug/
             fi
         else
             sudo --user build git clone "$gitrepo" "$gitreponame"
             cd /home/build/gitrepos/$gitreponame
             sudo --user build makepkg -crs --rmdeps --noconfirm
-            sudo --user build repo-add /var/arch-repo-grug/public/grug/grug.db.tar.gz *.pkg.tar.*
+            sudo --user build repo-add -R /var/arch-repo-grug/public/grug/grug.db.tar.gz *.pkg.tar.*
             mv *.pkg.tar.* /var/arch-repo-grug/public/grug/
         fi
     done
