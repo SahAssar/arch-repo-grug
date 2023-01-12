@@ -1,8 +1,6 @@
 pkgname=arch-repo-grug
 pkgver=0.0.1
 pkgver() {
-  # Use number of revisions and hash as version
-  cd "$pkgname"
   printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 pkgrel=1
