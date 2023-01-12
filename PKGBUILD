@@ -13,6 +13,7 @@ provides=()
 conflicts=()
 install="script.install"
 package() {
+  cd ../
   depends+=(rsync)
   depends+=(curl)
   depends+=(pacman-contrib)
